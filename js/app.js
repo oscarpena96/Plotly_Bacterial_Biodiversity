@@ -53,8 +53,7 @@ function init() {
     });
   }
   
-  // DELIVERABLE 1 Requirements
-  // Create a Horizontal Bar Chart
+  //  Horizontal Bar Chart
   
   // 1. Create the buildCharts function.
   function buildCharts(sample) {
@@ -99,8 +98,7 @@ function init() {
       Plotly.newPlot("bar", barData, barLayout);
   
   
-  // DELIVERABLE 2 Requirements
-  // Create a Bubble Chart
+  // Bubble Chart
   
   
       // 1. Create the trace for the bubble chart.
@@ -127,18 +125,17 @@ function init() {
       // 3. Use Plotly to plot the data with the layout.
       Plotly.newPlot("bubble", bubbleData, bubbleLayout)
   
-  // DELIVERABLE 3 Requirements
-  // Create a Gauge Chart
+  // Gauge Chart
   
       // 1. Create a variable that filters the metadata array for the object with the desired sample number.
       var metadata = data.metadata;
-      var gaugeArray = metadata.filter(metaObj => metaObj.id == sample);  
+      var lastArray = metadata.filter(metaObj => metaObj.id == sample);  
   
       // 2. Create a variable that holds the first sample in the metadata array.
-          var gaugeResult = gaugeArray[0];
+          var arrayResult = lastArray[0];
   
       // 3. Create a variable that holds the washing frequency.  
-      var wfreqs = gaugeResult.wfreq;
+      var wfreqs = arrayResult.wfreq;
       console.log(wfreqs)
   
       // 4. Create the trace for the gauge chart.
@@ -146,7 +143,7 @@ function init() {
         value: wfreqs,
         type: "indicator",
         mode: "gauge+number",
-        title: {text: "<h5> Belly Button Washing Frequency  </h5> <br></br> Scrubs Per Week "},
+        title: {text: " Belly Button Washing Frequency  <br></br> Scrubs Per Week "},
         gauge: {
           axis: {range: [null,10], dtick: "2"},
   
